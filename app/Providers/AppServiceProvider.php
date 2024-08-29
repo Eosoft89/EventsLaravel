@@ -22,8 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Event::listen(CreateOrderEvent::class, [
-            GenerateInvoiceListener::class,
-        ]);
+
     }
 }

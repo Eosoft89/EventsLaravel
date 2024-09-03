@@ -12,7 +12,7 @@ class CreateOrderCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:order';
+    protected $signature = 'make:order {user_id} {amount}';
 
     /**
      * The console command description.
@@ -26,9 +26,17 @@ class CreateOrderCommand extends Command
      */
     public function handle()
     {
+        $user_id = $this->argument('user_id');
+        $amount = $this->argument('amount');
+
         Order::create([
+            'user_id' => $user_id,
+            'amount' => $amount
+        ]);
+
+        /*Order::create([
             'user_id' => 1,
             'amount' => rand(1, 200)
-        ]);
+        ]);*/
     }
 }

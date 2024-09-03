@@ -15,7 +15,7 @@ class OrderController extends Controller
             'amount' => 25
         ]);
 
-        CreateOrderEvent::dispatch($order); //Crea el evento CreateOrder y por ende se ejecutan todos los listeners asociados.
+       // CreateOrderEvent::dispatch($order); //Crea el evento CreateOrder y por ende se ejecutan todos los listeners asociados.
 
         return response()->json("Éxito");
     }
